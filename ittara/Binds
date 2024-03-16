@@ -51,32 +51,32 @@ bind "scancode25"     "+radialradio"                            // [v] Radial ra
 // Other letter keys.
 bind "scancode5"      "buymenu"                                 // [b] Open the buy menu/tablet delivery (dangerzone) to buy weapons, grenades and equipment.
 bind "scancode8"      "+use-beep"                               // [e] Execute actions with a beep sound (ex. open doors, pick up weapons, plant bomb etc.) {script}.
-bind "scancode9"      "+lookatweapon"                           // [f] Inspect the weapon or lower the tablet (dangerzone).
+bind "scancode9"      "+dance; -lookatweapon"                   // [f] Inspect the weapon or lower the tablet (dangerzone).
 bind "scancode10"     "drop"                                    // [g] Drop the current weapon.
-bind "scancode11"     "+spray_menu"                             // [h] Open the spray menu to apply spray on the aimed surface.
+bind "scancode11"     ""                                        // [h] -
 bind "scancode12"     ""                                        // [i] -
 bind "scancode13"     ""                                        // [j] -
 bind "scancode14"     "callvote"                                // [k] Open the vote menu.
 bind "scancode15"     "+bomb-drop"                              // [l] Fast bomb drop {script}.
 bind "scancode16"     "teammenu"                                // [m] Open the team selection menu and the tablet (dangerzone).
-bind "scancode17"     "-attack; -attack2"                       // [n] Jumpthrow grenade [allowed in championships] {script}.
+bind "scancode17"     "+runthrow;+throwaction"                  // [n] Run Jumpthrow
 bind "scancode18"     ""                                        // [o] -
 bind "scancode19"     "toggle spec_show_xray"                   // [p] Toggles the x-ray during spec.
 bind "scancode20"     "+quick-switch"                           // [q] Quick switch the current weapon to knife/zeus and back {script}.
 bind "scancode21"     "+reload"                                 // [r] Reload the currently weapon.
-bind "scancode23"     "+voicerecord"                            // [t] Activate the voice communication <hold to speak; only with teammates in matchmaking>.
+bind "scancode23"     "+spray_menu"                             // [t] Open the spray menu to apply spray on the aimed surface.
 
 // Special keys.
 bind "scancode41"     "cancelselect"                            // [esc] Open/close the game menu.
 bind "scancode43"     "+scores-fps"                             // [tab] Shows the scoreboard or the tablet alongside the fps <hold to show> (dangerzone) {script}.
 bind "scancode57"     ""                                        // [capslock] -
-bind "scancode225"    "+sprint"                                 // [shift] Walk (slow; no sound).
+bind "scancode225"    "+sprint_"                                // [shift] Walk (slow; no sound).
 bind "scancode229"    ""                                        // [rshift]-
-bind "scancode224"    "+duck"                                   // [ctrl] Duck/Crouch; press before jumping for a long jump with ExoJump Boots (dangerzone).
+bind "scancode224"    "+duck_"                                  // [ctrl] Duck/Crouch; press before jumping for a long jump with ExoJump Boots (dangerzone).
 bind "scancode228"    ""                                        // [rctrl] -
-bind "scancode226"    "+secondbinds"                            // [alt] Toggle the secondary set of keys <hold to activate> {script}.
+bind "scancode226"    "+jumpaction;+throwaction;"               // [alt] Jumpthrow grenade
 bind "scancode230"    ""                                        // [ralt] -
-bind "scancode44"     "+jump"                                   // [space] Jump <hold for a high jump with ExoJump Boots> (dangerzone) {script}.
+bind "scancode44"     "+jump_"                                  // [space] Jump <hold for a high jump with ExoJump Boots> (dangerzone) {script}.
 bind "scancode40"     ""                                        // [enter] -
 bind "scancode42"     ""                                        // [backspace] -
 bind "scancode73"     ""                                        // [ins] -
@@ -91,7 +91,7 @@ bind "scancode72"     ""                                        // [pause] -
 // Punctuation keys.
 bind "scancode53"     "toggleconsole"                           // [`] Open the developer console.
 bind "scancode54"     "exec autoexec.cfg"                       // [,] Execute the autoexec.cfg.
-bind "scancode55"     "exec config.cfg"                         // [.] Execute the config.cfg.
+bind "scancode55"     ""                                        // [.] -
 bind "scancode56"     ""                                        // [/] -
 bind "scancode51"     ""                                        // [;] -
 bind "scancode52"     ""                                        // ['] -
@@ -111,9 +111,9 @@ bind "scancode79"     "+turnright"                              // [rightarrow] 
 bind "mwheelup"       ""                                        // 
 bind "mwheeldown"     "+jump_"                                  // Jump at down scroll.
 bind "mouse1"         "+attack_"                                // Shoot, plant, inject medi-shot, cycle forward and do hand jab [fast punch] (dangerzone).
-bind "mouse2"         "+attack2"                                // Zoom, toggle silencer/brust, cycle backward and do hand cross [charged punch] (dangerzone).
-bind "mouse3"         ""                                        // -
-bind "mouse4"         "player_ping"                             // Ping the players.
+bind "mouse2"         "+attack2_"                               // Zoom, toggle silencer/brust, cycle backward and do hand cross [charged punch] (dangerzone).
+bind "mouse3"         "player_ping"                             // Ping the players.
+bind "mouse4"         "+voicerecord"                            // Activate the voice communication <hold to speak; only with teammates in matchmaking>.
 bind "mouse5"         "+secondbinds"                            // Toggle the secondary set of keys <hold to activate> {script}.
 
 // Function keys.
@@ -141,7 +141,53 @@ cl_radial_radio_tab_0_text_7 "#Chatwheel_heardnoise"           // Call a noise.
 cl_radial_radio_tab_0_text_8 "#Chatwheel_aplan"                // Ping site A.
 
 
+// |Single| 'SCRIPTS' |Single|
 
+//Desubtick Alias - TESTING
+alias +attack_ "+attack;+attack"
+alias -attack_ "-attack;-attack;-attack"
+
+alias +attack2_ "+attack2;+attack2"
+alias -attack2_ "-attack2;-attack2;-attack2"
+
+alias +jump_ "+jump;+jump"
+alias -jump_ "-jump;-jump;-jump"
+
+alias +duck_ "+duck;+duck"
+alias -duck_ "-duck;-duck;-duck"
+
+alias +sprint_ "+sprint;+sprint" // walking
+alias -sprint_ "-sprint;-sprint;-sprint"
+
+alias +forward_ "+forward;+forward"
+alias -forward_ "-forward;-forward;-forward"
+
+alias +left_ "+left;+left"
+alias -left_ "-left;-left;-left"
+
+alias +back_ "+back;+back"
+alias -back_ "-back;-back;-back"
+
+alias +right_ "+right;+right"
+alias -right_ "-right;-right;-right"
+
+// Weapon Dance
+alias +dance "-lookatweapon; +reload"
+alias -dance "+lookatweapon; -reload"
+
+// Run Jump Throw
+alias "+runthrow" "+forward;+jump;"
+alias "-runthrow" "-jump;-forward"
+
+// Jump Throw
+alias "+jumpaction" "+jump;"
+alias "+throwaction" "-attack; -attack2"
+alias "-jumpaction" "-jump"
+
+// AFK Move
+alias afk-move "afk-move_on"
+alias afk-move_on "+forward; +left; +turnleft; blip_on; alias afk-move afk-move_off"
+alias afk-move_off "-forward; -left; -turnleft; blip_off; alias afk-move afk-move_on"
 
 // Prevent buy wheel from purchasing via number keys.
 // Default: 0
