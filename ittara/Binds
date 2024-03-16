@@ -24,10 +24,10 @@ bind "scancode38"     "slot9"                                   // [9] Equip: De
 bind "scancode39"     "slot10"                                  // [0] Equip: Incendiary Grenade/Molotov.
 
 // Movement binds.
-bind "scancode4"      "+left"                                   // [a] Strafe left.
-bind "scancode7"      "+right"                                  // [d] Strafe right.
-bind "scancode22"     "+back"                                   // [s] Move back.
-bind "scancode26"     "+forward"                                // [w] Move forward.
+bind "scancode4"      "+left_"                                   // [a] Strafe left.
+bind "scancode7"      "+right_"                                  // [d] Strafe right.
+bind "scancode22"     "+back_"                                   // [s] Move back.
+bind "scancode26"     "+forward_"                                // [w] Move forward.
 
 bind "mouse_x"        "yaw"                                     // Controls the mouse screen movement on vertical axis.
 bind "mouse_y"        "pitch"                                   // Controls the mouse screen movement on horizontal axis.
@@ -108,9 +108,9 @@ bind "scancode80"     "+turnleft"                               // [leftarrow] R
 bind "scancode79"     "+turnright"                              // [rightarrow] Rotate to right (clockwise).
 
 // Mouse keys.
-bind "mwheelup"       "+jump"                                   // Jump at upper scroll.
-bind "mwheeldown"     "+jump"                                   // Jump at down scroll.
-bind "mouse1"         "+attack"                                 // Shoot, plant, inject medi-shot, cycle forward and do hand jab [fast punch] (dangerzone).
+bind "mwheelup"       ""                                        // 
+bind "mwheeldown"     "+jump_"                                  // Jump at down scroll.
+bind "mouse1"         "+attack_"                                // Shoot, plant, inject medi-shot, cycle forward and do hand jab [fast punch] (dangerzone).
 bind "mouse2"         "+attack2"                                // Zoom, toggle silencer/brust, cycle backward and do hand cross [charged punch] (dangerzone).
 bind "mouse3"         ""                                        // -
 bind "mouse4"         "player_ping"                             // Ping the players.
@@ -130,43 +130,6 @@ bind "scancode67"     ""                                        // [f10] -
 bind "scancode68"     ""                                        // [f11] -
 bind "scancode69"     ""                                        // [f12] -
 
-// Numeric keypad keys.
-//
-// <> Items aliases:
-// Pistols: glock, hkp2000, usp_silencer, elite, p250, tec9, fn57, deagle { (I) CZ75-Auto -> 'tec9', 'fn57'; (II) R8 Revolver -> 'deagle' }
-// Rifles: galilar, famas, ak47, m4a1, m4a1_silencer, ssg08, aug, sg556, awp, scar20, g3sg1 { (I) M4A4, M4A1-S, AK-47 -> 'm4a1', 'm4a1_silencer', 'ak47' }
-// Heavies: nova, xm1014, mag7, m249, negev { (I) Sawed-Off -> 'mag7' }
-// SMGs: mac10, mp9, mp7, ump45, p90, bizon { (I) MP5-SD -> 'mp7' }
-// Equipment: vest, vesthelm, taser, defuser, heavyarmor
-// Grenades: molotov, incgrenade, decoy, flashbang, hegrenade, smokegrenade, tagrenade
-//
-// <> Default loadout list (up-bottom order):
-// Equipment: vest, vesthelm, taser, defuser
-// Pistols: hpk2000/usp_silencer/glock, elite, p250, fn57/tec9, deagle
-// Mid-Tier: nova, xm1041, mp5sd, p90, mp9/mac10
-// Rifles: famag/galilar, m4a1/m4a1_silencer/ak47, ssg08, aug/sg556, awp
-// Grenades: flashbang, smokegrenade, hegrenade, incgrenade, decoy
-//
-// <i> An item which has a different name in the other team, can be bought via the other team-side alias.
-// <i> After buying the items, the knife will be automatically equipped for an easier spawn run.
-bind "scancode83"     ""                                        // [numlock] -
-bind "scancode84"     "buy hegrenade; slot3"                    // [/] Buy: High Explosive Grenade.
-bind "scancode85"     "buy flashbang; slot3"                    // [*] Buy: Flashbang.
-bind "scancode86"     "buy smokegrenade; slot3"                 // [-] Buy: Smoke Grenade.
-bind "scancode87"     "buy incgrenade; slot3"                   // [+] Buy: Incendiary Grenade/Molotov.
-bind "scancode88"     "buy defuser; slot3"                      // [enter] Buy: Defuse Kit.
-bind "scancode99"     "buy vest; slot3"                         // [.] Buy: Kevlar Vest.
-bind "scancode98"     "buy vesthelm; slot3"                     // [0] Buy: Kevlar Vest + Helmet.
-bind "scancode89"     "buy secondary1; slot3"                   // [1] Buy: Pistol 2 (starting from 'Other pistols' category).
-bind "scancode90"     "buy secondary2; slot3"                   // [2] Buy: Pistol 3.
-bind "scancode91"     "buy secondary3; slot3"                   // [3] Buy: Pistol 4.
-bind "scancode92"     "buy midtier0; slot3"                     // [4] Buy: Mid-Tier 1.
-bind "scancode93"     "buy midtier1; slot3"                     // [5] Buy: Mid-Tier 2.
-bind "scancode94"     "buy midtier2; slot3"                     // [6] Buy: Mid-Tier 3.
-bind "scancode95"     "buy rifle0; slot3"                       // [7] Buy: Rifle 1.
-bind "scancode96"     "buy rifle1; slot3"                       // [8] Buy: Rifle 2.
-bind "scancode97"     "buy rifle2; slot3"                       // [9] Buy: Rifle 3.
-
 // Radial radio.
 cl_radial_radio_tab_0_text_1 "#Chatwheel_midplan"              // Ping middle.
 cl_radial_radio_tab_0_text_2 "#Chatwheel_bplan"                // Ping site B.
@@ -176,6 +139,9 @@ cl_radial_radio_tab_0_text_5 "#Chatwheel_requestweapon"        // Request weapon
 cl_radial_radio_tab_0_text_6 "#Chatwheel_rotatetome"           // Call the teammates rotation.
 cl_radial_radio_tab_0_text_7 "#Chatwheel_heardnoise"           // Call a noise.
 cl_radial_radio_tab_0_text_8 "#Chatwheel_aplan"                // Ping site A.
+
+
+
 
 // Prevent buy wheel from purchasing via number keys.
 // Default: 0
